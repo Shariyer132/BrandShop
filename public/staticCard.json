@@ -1,0 +1,17 @@
+[
+    {
+        "image": "https://i.ibb.co/jfhy5CD/women-fashion-free-img.jpg",
+        "header": "20% Off On Tank Tops",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "image": "https://i.ibb.co/YNCDSxk/men-fashion-free-img.jpg",
+        "header": "Latest Eyewear For You",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "image": "https://i.ibb.co/5K3YxWh/footwear-free-img.jpg",
+        "header": "Let's Lorem Suit Up!",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    }
+]

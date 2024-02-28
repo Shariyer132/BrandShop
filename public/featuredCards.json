@@ -1,0 +1,66 @@
+[
+    {
+        "id": 11,
+        "image": "https://i.ibb.co/jfhy5CD/women-fashion-free-img.jpg",
+        "category": "Men",
+        "price": "$120.00",
+        "title": "DNK Yellow Shoes",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "id": 12,
+        "image": "https://i.ibb.co/YNCDSxk/men-fashion-free-img.jpg",
+        "category": "Men",
+        "price": "$200.00",
+        "title": "DNK Blue Shoes",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "id": 13,
+        "image": "https://i.ibb.co/5K3YxWh/footwear-free-img.jpg",
+        "category": "Men",
+        "price": "$150.00",
+        "title": "Dark Brown Jeans",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "id": 14,
+        "image": "https://i.ibb.co/5K3YxWh/footwear-free-img.jpg",
+        "category": "women",
+        "price": "$150.00",
+        "title": "Blue Denim Jeans",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "id": 15,
+        "image": "https://i.ibb.co/5K3YxWh/footwear-free-img.jpg",
+        "category": "women",
+        "price": "$150.00",
+        "title": "Basic Bray Jeans",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "id": 16,
+        "image": "https://i.ibb.co/5K3YxWh/footwear-free-img.jpg",
+        "category": "women",
+        "price": "$130.00",
+        "title": "Blue Denim Shorts",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "id": 17,
+        "image": "https://i.ibb.co/5K3YxWh/footwear-free-img.jpg",
+        "category": "Accessories",
+        "price": "$150.00",
+        "title": "Anchor Bracelet",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    },
+    {
+        "id": 18,
+        "image": "https://i.ibb.co/5K3YxWh/footwear-free-img.jpg",
+        "category": "Accessories",
+        "price": "$150.00 - $170.00",
+        "title": "Boho Bangle Bracelet",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum."
+    }
+]
