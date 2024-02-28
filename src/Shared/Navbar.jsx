@@ -1,7 +1,11 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo1 from '../assets/logo1-free-img-140x47.png';
 import { FaUser } from "react-icons/fa";
+import { useState } from 'react';
+import { RxCross2 } from 'react-icons/rx';
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
         <div className="navbar text-white bg-[#333333] min-h-24 bg-opacity-10">
             <div className="flex-1">
@@ -38,8 +42,11 @@ const Navbar = () => {
                         <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                         <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                             {/* Sidebar content here */}
-                            <li><a>Sidebar Item 1</a></li>
-                            <li><a>Sidebar Item 2</a></li>
+                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="text-2xl flex items-center justify-between px-4"><RxCross2/> Shoping Cart</label>
+                            <li><Link to="/shop">EVERYTHING</Link></li>
+                            <li><Link to="/shop">WOMEN</Link></li>
+                            <li><Link to="/shop">MEN</Link></li>
+                            <li><Link to="/shop">ACCESSORIES</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -3,10 +3,14 @@ import { IoRemoveOutline } from "react-icons/io5";
 import img1 from '../../assets/tshirt7-300x300.jpg';
 import img2 from '../../assets/product-hoodie2-300x300.jpg';
 import img3 from '../../assets/product-m-jeans2-300x300.jpg';
+import NavbarTwo from "../../Shared/NavbarTwo/NavbarTwo";
 
 const Shop = () => {
     return (
         <>
+       <div>
+       <NavbarTwo/>
+       </div>
             <div className="bg-[#F5F7F9]">
                 <div className="flex flex-col lg:flex-row ">
                     {/* filter functions */}
