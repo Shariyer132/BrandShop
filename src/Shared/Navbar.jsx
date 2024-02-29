@@ -1,15 +1,20 @@
 import { Link } from 'react-router-dom';
 import logo1 from '../assets/logo1-free-img-140x47.png';
+import cartImg1 from '../assets/product-hoodie2-300x300.jpg';
 import { FaUser } from "react-icons/fa";
+import { RxCross2, RxCrossCircled } from 'react-icons/rx';
+import Drawer from './NavbarTwo/Dawer';
+import Header from './NavbarTwo/Header';
 import { useState } from 'react';
-import { RxCross2 } from 'react-icons/rx';
+
 const Navbar = () => {
+    const shopingCart = true;
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className="navbar text-white bg-[#333333] min-h-24 bg-opacity-10">
+        <div className="navbar text-white bg-[#333333] justify-between min-h-24 bg-opacity-10">
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl"><img src={logo1} alt="" /></a>
+                <Link to="/" className="btn btn-ghost text-white text-xl"><img src={logo1} alt="" /></Link>
                 <div className='hidden lg:block'>
                     <ul className='flex gap-5'>
                         <li><Link to="/shop">EVERYTHING</Link></li>
@@ -19,14 +24,18 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
-            <div className="flex-none">
-                <div className='hidden lg:block'>
+
+            {/* large device view */}
+            <div className="flex-none ">
+                <div className="hidden lg:block">
                     <ul className='flex gap-5'>
                         <li><a>ABOUT</a></li>
                         <li><a>CONTACT</a></li>
                     </ul>
                 </div>
-                <div className="drawer drawer-end px-6">
+
+                {/* Shoping Cart */}
+                <div className="drawer drawer-end px-6 ">
                     <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content">
                         {/* Page content here */}
@@ -40,34 +49,82 @@ const Navbar = () => {
                     </div>
                     <div className="drawer-side z-20">
                         <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                        <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                        <div className="p-4 min-h-full bg-base-200 text-base-content">
                             {/* Sidebar content here */}
-                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="text-2xl flex items-center justify-between px-4"><RxCross2/> Shoping Cart</label>
-                            <li><Link to="/shop">EVERYTHING</Link></li>
-                            <li><Link to="/shop">WOMEN</Link></li>
-                            <li><Link to="/shop">MEN</Link></li>
-                            <li><Link to="/shop">ACCESSORIES</Link></li>
-                        </ul>
+                            <label htmlFor="my-drawer-4" aria-label="close sidebar" className="text-2xl border-b-2 pb-5 flex items-center justify-between px-4"><RxCross2 className="cursor-pointer" /> Shoping Cart</label>
+
+                            {/* cards*/}
+                            <div className="min-h-[calc(100vh-220px)]">
+                                {/* card one */}
+                                <div className="flex items-center py-5 border-t-2 px-5 gap-5 text-lg">
+                                    <figure className="w-1/5">
+                                        <img src={cartImg1} alt="" />
+                                    </figure>
+                                    <div className="w-full">
+                                        <div className="flex justify-between items-center">
+                                            <p>Basic Gray Jeans</p>
+                                            <button><RxCrossCircled /></button>
+                                        </div>
+                                        <p><span>1</span>x<span>$150.00</span></p>
+                                    </div>
+                                </div>
+                                {/* card one */}
+                                <div className="flex items-center py-5 border-t-2 px-5 gap-5 text-lg">
+                                    <figure className="w-1/5">
+                                        <img src={cartImg1} alt="" />
+                                    </figure>
+                                    <div className="w-full">
+                                        <div className="flex justify-between items-center">
+                                            <p>Basic Gray Jeans</p>
+                                            <button><RxCrossCircled /></button>
+                                        </div>
+                                        <p><span>1</span>x<span>$150.00</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* btns */}
+                            <div className="flex flex-col gap-5">
+                                <div className="flex flex-col gap-5">
+                                    {
+                                        shopingCart ? <button className="btn btn-info rounded-none text-white"><Link>VIEW CART</Link></button> : <></>
+                                    }
+                                    <button className="btn btn-info rounded-none text-white"><Link to="/shop">CONTINUE SHOPPING</Link></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="dropdown dropdown-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className=" text-xl">
-                        <FaUser />
+
+                {/* user dropdown */}
+                <div className="dropdown dropdown-end hidden lg:block">
+                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div className=" text-xl">
+                            <FaUser />
+                        </div>
                     </div>
+                    {/* dropdown content */}
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-black shadow bg-base-100 rounded-box w-52">
+                        <li>
+                            <a className="justify-between">
+                                Profile
+                                <span className="badge">New</span>
+                            </a>
+                        </li>
+                        <li><a>Settings</a></li>
+                        <li><a>Logout</a></li>
+                    </ul>
                 </div>
-                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-black shadow bg-base-100 rounded-box w-52">
-                    <li>
-                        <a className="justify-between">
-                            Profile
-                            <span className="badge">New</span>
-                        </a>
-                    </li>
-                    <li><a>Settings</a></li>
-                    <li><a>Logout</a></li>
-                </ul>
             </div>
+
+            {/* moblie view */}
+            <main className="lg:hidden">
+                <Header setIsOpen={setIsOpen} />
+                <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+                    <ul onClick={() => (setIsOpen(false))} className="menu">
+                       <li className='text-black'><a>hloe</a></li>
+                    </ul>
+                </Drawer>
+            </main>
         </div>
     );
 };

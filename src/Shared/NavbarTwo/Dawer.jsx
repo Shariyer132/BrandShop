@@ -19,7 +19,7 @@ export default function Drawer({ children, isOpen, setIsOpen }) {
         <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
           <div className="flex justify-end items-end p-5">
             <button onClick={()=>setIsOpen(false)}>
-              <RxCross1 className="text-xl" />
+              <RxCross1 className="text-xl text-black" />
             </button>
           </div>
           {children}

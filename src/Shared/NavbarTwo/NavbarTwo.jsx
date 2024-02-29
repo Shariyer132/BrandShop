@@ -131,7 +131,7 @@ const NavbarTwo = () => {
             </div>
 
              {/* moblie view */}
-             <main className="md:hidden">
+             <main className="lg:hidden">
                 <Header setIsOpen={setIsOpen} />
                 <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
                     <ul onClick={() => (setIsOpen(false))} className="menu">

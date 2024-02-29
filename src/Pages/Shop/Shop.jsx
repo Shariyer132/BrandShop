@@ -4,24 +4,36 @@ import img1 from '../../assets/tshirt7-300x300.jpg';
 import img2 from '../../assets/product-hoodie2-300x300.jpg';
 import img3 from '../../assets/product-m-jeans2-300x300.jpg';
 import NavbarTwo from "../../Shared/NavbarTwo/NavbarTwo";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import FeaturedCards from "../../Components/FeaturedCards/FeaturedCards";
 
 const Shop = () => {
+    const [cards, setCards] = useState([]);
+
+    useEffect(() => {
+        axios.get('featuredCards.json')
+            .then(data => {
+                setCards(data.data)
+            })
+    }, [cards])
+
     return (
         <>
-       <div>
-       <NavbarTwo/>
-       </div>
+            <div>
+                <NavbarTwo />
+            </div>
             <div className="bg-[#F5F7F9]">
-                <div className="flex flex-col lg:flex-row ">
+                <div className="flex flex-col-reverse justify-center lg:gap-16 lg:flex-row">
                     {/* filter functions */}
-                    <div className="lg:w-1/4 flex md:p-5 flex-col items-center gap-3 px-5 pt-5">
+                    <div className="lg:w-1/4 flex lg:my-12 flex-col items-center  gap-3 px-5 pt-5">
                         {/* search bar */}
                         <div className="join py-5 pl-5">
                             <input type="text" placeholder="Search products..." className="input input-bordered join-item" />
                             <button className="btn btn-info text-white join-item"><FaAngleRight /></button>
                         </div>
                         {/* filter by price */}
-                        <div className="w-full max-w-md">
+                        <div className="w-full max-w-md mx-auto">
                             <label className="label">
                                 <span className="text-2xl">Filter by Price</span>
                             </label>
@@ -42,18 +54,7 @@ const Shop = () => {
                                 <li className="flex justify-between"><a>Women</a><span>(3)</span></li>
                             </ul>
                         </div>
-                        {/* Shortby field */}
-                        {/* <div className="w-1/2 lg:w-full">
-                            <label className="label">
-                                <span className="label-text font-medium">Short By</span>
-                            </label>
-                            <select className="select select-bordered w-full max-w-xs">
-                                <option disabled selected>Normal</option>
-                                <option>Normal Apple</option>
-                                <option>Normal Orange</option>
-                                <option>Normal Tomato</option>
-                            </select>
-                        </div> */}
+                        {/* Best seller cards */}
                         <div>
                             <h5 className="text-2xl py-5">Our Best Sellers</h5>
                             <div className="flex flex-col gap-3">
@@ -108,56 +109,37 @@ const Shop = () => {
                                         <p>$150</p>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
+                    {/* Shop card Products */}
+                    <div className="max-w-4xl sm:p-24 px-5 py-10 my-16 lg:mx-2 mx-auto bg-white">
+                        <p className="text-sm sm:text-left text-center">Home / Shop</p>
+                        <div className="flex pt-4 justify-between flex-col sm:flex-row gap-3 items-center">
+                            <p>Showing 1–12 of 31 results</p>
 
-                    <div className="lg:w-3/4 bg-white">
+                        {/* Shortby field */}
+                            <div>
+                                <select className="select select-bordered w-full max-w-xs">
+                                    <option selected>Default sorting</option>
+                                    <option>Sort by popularity</option>
+                                    <option>Sort by average rating</option>
+                                    <option>Sort by latest</option>
+                                    <option>Sort by price: low to high</option>
+                                    <option>Sort by price: high to low</option>
+                                </select>
+                            </div>
+                        </div>
                         {/* cards */}
-                        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-3 px-4 md:py-10">
-                            {/* card one */}
-                            <div className="card bg-base-100 shadow-lg">
-                                <figure className="px-10 pt-10">
-                                    <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes</h2>
-                                    <p><span className="font-medium">Price:</span> $500</p>
-                                    <div className="card-actions">
-                                        <button className="btn btn-primary">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* card two */}
-                            <div className="card bg-base-100 shadow-lg">
-                                <figure className="px-10 pt-10">
-                                    <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes</h2>
-                                    <p><span className="font-medium">Price:</span> $500</p>
-                                    <div className="card-actions">
-                                        <button className="btn btn-primary">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* card three */}
-                            <div className="card bg-base-100 shadow-lg">
-                                <figure className="px-10 pt-10">
-                                    <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes</h2>
-                                    <p><span className="font-medium">Price:</span> $500</p>
-                                    <div className="card-actions">
-                                        <button className="btn btn-primary">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 py-10">
+                            {
+                                cards.map((card, idx) => <FeaturedCards key={idx} card={card}></FeaturedCards>)
+                            }
 
                         </div>
                         {/* Pagination */}
-                        <div className="join flex justify-center p-6">
+                        <div className="join flex justify-center">
                             <button className="join-item btn">«</button>
                             <button className="join-item btn">Page 22</button>
                             <button className="join-item btn">»</button>
