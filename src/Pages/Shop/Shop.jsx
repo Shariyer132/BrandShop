@@ -24,7 +24,7 @@ const Shop = () => {
                 <NavbarTwo />
             </div>
             <div className="bg-[#F5F7F9]">
-                <div className="flex flex-col-reverse justify-center lg:gap-16 lg:flex-row">
+                <div className="flex flex-col justify-center lg:gap-16 lg:flex-row">
                     {/* filter functions */}
                     <div className="lg:w-1/4 flex lg:my-12 flex-col items-center  gap-3 px-5 pt-5">
                         {/* search bar */}
@@ -37,7 +37,7 @@ const Shop = () => {
                             <label className="label">
                                 <span className="text-2xl">Filter by Price</span>
                             </label>
-                            <input type="range" min={0} max="100" value="50" className="range range-xs mt-2 mb-3 range-info " />
+                            <input type="range" min={0} max="100" className="range range-xs mt-2 mb-3 range-info " />
                             <div className="flex items-center justify-between gap-5">
                                 <button className="btn btn-sm text-white btn-info">FILTER</button>
                                 <p className="flex items-center">
@@ -114,12 +114,17 @@ const Shop = () => {
                         </div>
                     </div>
                     {/* Shop card Products */}
-                    <div className="max-w-4xl sm:p-24 px-5 py-10 my-16 lg:mx-2 mx-auto bg-white">
-                        <p className="text-sm sm:text-left text-center">Home / Shop</p>
+                    <div className="sm:p-24 px-5 py-10 my-16 lg:mx-2 mx-auto bg-white">
+                        <div className="text-sm breadcrumbs sm:text-left text-center">
+                            <ul>
+                                <li><a>Home</a></li>
+                                <li><a>Shop</a></li>
+                            </ul>
+                        </div>
                         <div className="flex pt-4 justify-between flex-col sm:flex-row gap-3 items-center">
                             <p>Showing 1–12 of 31 results</p>
 
-                        {/* Shortby field */}
+                            {/* Shortby field */}
                             <div>
                                 <select className="select select-bordered w-full max-w-xs">
                                     <option selected>Default sorting</option>

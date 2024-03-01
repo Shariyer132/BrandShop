@@ -1,7 +1,7 @@
 
 export default function Header({ setIsOpen }) {
     return (
-      <header className="flex justify-between p-4">
+      <header className="flex justify-between p-4 z-30">
         <button
           className=" text-white rounded "
           onClick={() => setIsOpen(true)}
