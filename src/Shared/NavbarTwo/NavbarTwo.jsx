@@ -44,7 +44,7 @@ const NavbarTwo = () => {
                 <div className="hidden lg:block">
                     <ul className='flex gap-5'>
                         <li className='hover:text-sky-500'><Link to="/aboutUs">ABOUT</Link></li>
-                        <li className='hover:text-sky-500'><Link>CONTACT</Link></li>
+                        <li className='hover:text-sky-500'><Link to="/contactUs">CONTACT</Link></li>
                     </ul>
                 </div>
 

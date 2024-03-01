@@ -7,24 +7,25 @@ import CartPage from "../Pages/CartPage/CartPage";
 import SingleDetailedCard from "../Pages/Shop/SingleDetailedCard";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactUs from "../Pages/ContactUS/ContactUs";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Main/>,
+        element: <Main />,
         children: [
             {
                 path: "/",
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: "/shop",
-                element: <Shop/>
+                element: <Shop />
             },
             {
                 path: "/cart",
-                element: <CartPage/>
+                element: <CartPage />
             },
             {
                 path: "/product",
@@ -32,17 +33,21 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/checkout",
-                element: <CheckOut/>
+                element: <CheckOut />
             },
             {
                 path: "/aboutUs",
-                element: <AboutUs/>
+                element: <AboutUs />
+            },
+            {
+                path: "/contactUs",
+                element: <ContactUs />
             }
         ]
     },
     {
         path: "dashboard",
-        element: <Dashboard/>,
+        element: <Dashboard />,
         children: [
             {
                 path: "admin",
